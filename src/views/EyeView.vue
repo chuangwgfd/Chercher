@@ -12,7 +12,7 @@ export default {
   data() {
     return {
       img,
-      loading: false,
+      loading: true,
     }
   },
   mounted() {

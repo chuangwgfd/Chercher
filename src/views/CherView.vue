@@ -17,7 +17,7 @@
 
 <script>
 import { Icon } from "@iconify/vue2";
-import logo from '@/assets/logo.png'
+import logo from '@/assets/Logo.svg'
 
 export default {
   name: "HomeView",

@@ -79,7 +79,7 @@ export default {
       logo,
       searchImg,
       accountImg,
-      loading: false,
+      loading: true,
       photo1,
       photo2,
       photo3,
@@ -91,7 +91,7 @@ export default {
     
     setTimeout(() => {
       this.loading = false
-    }, 2000);
+    }, 1000);
   },
   methods: {
      handleClickLink() {
