@@ -4,7 +4,7 @@
       img(:src="logo")
     .wrap(:class="{ 'extend': isInputTrigger }")
       .search.flex.align-items-center
-        input.search-input(v-model="value" placeholder="Search")
+        input.search-input(v-model="value" placeholder="Search" @keyup.enter="handleKeyUp")
         Icon.icon.pointer.cancel(v-show="value" icon="mi:close" @click.native="clearValue")
         Icon.icon.pointer(icon="mi:search" @click.native="toResult")
       .result(v-show="isInputTrigger")
@@ -28,6 +28,7 @@ export default {
     return {
       logo,
       value: "",
+      countKeyUp: 0,
       results: [
         '李霏歌手',
         '李霏身高',
@@ -52,6 +53,15 @@ export default {
      */
      toResult() {
       this.$router.push('/search?ssp=eJzj4tTP1TcwykvLKjBg_李霏');
+    },
+
+    /**
+     * 
+     */
+     handleKeyUp() {
+       this.countKeyUp ++
+      console.log('handleKeyUp');
+      if (this.countKeyUp > 1) this.toResult()
     }
   },
 };
@@ -64,7 +74,7 @@ export default {
   .logo {
     margin-top: 20%;
     margin-bottom: 2rem;
-    width: 500px;
+    width: 400px;
     img {
       width: 100%;
     }
@@ -74,7 +84,7 @@ export default {
     height: 48px;
     padding: 0.5rem 1.5rem;
     border: 1px solid #ccc;
-    border-radius: 24px;
+    border-radius: 16px;
 
     &.extend {
       height: 236px;
