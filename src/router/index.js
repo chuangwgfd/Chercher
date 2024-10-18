@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import EyeView from '../views/EyeView.vue'
 import CherView from '@/views/CherView.vue'
 import ResultView from '@/views/ResultView.vue'
 
@@ -16,6 +16,11 @@ const routes = [
     path: '/search',
     name: 'result',
     component: ResultView
+  },
+  {
+    path: '/news',
+    name: 'news',
+    component: EyeView
   },
 ]
 
