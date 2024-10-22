@@ -1,5 +1,5 @@
 <template lang="pug">
-  .news(v-loading="loading")
+  .news.flex.center-center(v-loading="loading")
     img(:src="img")
 </template>
 
@@ -25,11 +25,23 @@ export default {
 
 <style lang="scss" scoped>
   .news {
+    position: relative;
     width: 100%;
     height: 100vh;
     overflow: auto;
     img {
+      // width: 100%;
+      height: 100%;
+    }
+    &::before {
+      content: " ";
       width: 100%;
+      height: 71px;
+      background: #212a31;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
     }
   }
 </style>
